@@ -13,31 +13,53 @@ from streamlit.components.v1 import html  # Add this import
 
 # Custom CSS for layout and spacing
 st.markdown("""
-    ‹style>
-body {
-background-color:
-#f0f2f6;
-}
-•main-title {
-font-family: 'Courier New'
-/
-monospace;
-color: #4CAF50; text-align: center; font-weight: bold; background: linear-
-gradient(to right, #4CAF50, #3841);
--webkit-background-clip:
-text;
-color: transparent; margin-top: 40px;
-font-size: 20px; /* Set font
-size to 20px */
-white-space: nowrap; overflow: hidden;
-text-overflow: ellipsis; max-width: 100%; padding: 0 10px;
-box-sizing: border-box;
-｝
-@media
-600px) {
-screen and (max-width:
-•main-title {
-font-size: 20px;
+    <style>
+        .main-title {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 30px;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+        .input-area, .api-selection, .response-section {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .custom-button {
+            margin-top: 10px;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
+# Custom CSS for color scheme and typography
+st.markdown("""
+    <style>
+        body {
+            background-color: #f0f2f6;
+        }
+        .main-title {
+            font-family: 'Courier New', monospace;
+            color: #4CAF50;
+            text-align: center;
+            font-weight: bold;
+            background: linear-gradient(to right, blue, pink);
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-top: 40px;
+            font-size: clamp(24px, 5vw, 22px);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+        @media screen and (max-width: 600px) {
+            .main-title {
+                font-size: clamp(20px, 4vw, 30px);
             }
         }
         .input-area, .api-selection, .response-section {
@@ -277,7 +299,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Title
-st.markdown("<h2 class='main-title'>Parenting Demo</h2>", unsafe_allow_html=True)
+st.markdown("<h2>class='main-title'>Parenting Assistance Demo</h2>", unsafe_allow_html=True)
 
 # User Input Section
 if 'enter_pressed' not in st.session_state:
