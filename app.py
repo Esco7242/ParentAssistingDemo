@@ -41,26 +41,7 @@ st.markdown("""
             background-color: #f0f2f6;
         }
         .main-title {
-            font-family: 'Courier New', monospace;
             color: #4CAF50;
-            text-align: center;
-            font-weight: bold;
-            background: linear-gradient(to right, blue, pink);
-            -webkit-background-clip: text;
-            color: transparent;
-            margin-top: 40px;
-            font-size: clamp(24px, 5vw, 22px);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-width: 100%;
-            padding: 0 10px;
-            box-sizing: border-box;
-        }
-        @media screen and (max-width: 600px) {
-            .main-title {
-                font-size: clamp(20px, 4vw, 30px);
-            }
         }
         .input-area, .api-selection, .response-section {
             background-color: #ffffff;
@@ -299,7 +280,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Title
-st.markdown("<h2> class='main-title'>Parenting Assistance Demo</h2>", unsafe_allow_html=True)
+st.markdown("<h1 class='main-title'>Parenting Assistance Demo</h1>", unsafe_allow_html=True)
 
 # User Input Section
 if 'enter_pressed' not in st.session_state:
