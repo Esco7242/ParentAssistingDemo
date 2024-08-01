@@ -651,7 +651,7 @@ if generate or st.session_state.enter_pressed:
             full_response, text_message = generate_response(st.session_state.user_input, length_selection, context, response_placeholder)
 
             # Display the full response
-            st.subheader("Detailed Response")
+            st.subheader("")
             response_placeholder.markdown(full_response)
             
             # Display the text message version
