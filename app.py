@@ -282,9 +282,38 @@ st.markdown("""
 st.markdown("<h1 class='main-title'>Parenting Assistance Demo</h1>", unsafe_allow_html=True)
 
 # User Input Section
-user_input = st.text_input("", key="user_input", placeholder="Enter your research question here...", label_visibility="collapsed", max_chars=200)
+if 'enter_pressed' not in st.session_state:
+    st.session_state.enter_pressed = False
+
+def on_enter_pressed():
+    st.session_state.enter_pressed = True
+
+user_input = st.text_input(
+    "",
+    key="user_input",
+    placeholder="Enter your research question here...",
+    label_visibility="collapsed",
+    max_chars=200,
+    on_change=on_enter_pressed
+)
+
 generate = st.button("Generate", key='generate_button', help="Click to generate a response", use_container_width=True)
+
 response_placeholder = st.empty()
+
+# Add this JavaScript to capture the Enter key press
+js_code = """
+<script>
+document.addEventListener('keydown', function(e) {
+    if (e.key == 'Enter') {
+        setTimeout(function() {
+            document.getElementsByTagName('button')[0].click();
+        }, 0);
+    }
+});
+</script>
+"""
+html(js_code, height=0)
 
 # Options Section with Expander
 st.markdown("<div class='options-container'>", unsafe_allow_html=True)
@@ -297,7 +326,7 @@ with st.expander("Change Complexity to Doctor level:", expanded=False):
         key="length_radio"
     )
 
-st.markdown("</div>", unsafe_allow_html=True)
+st.markdown("</div>", unsafe_allow_html=True))
 
 # Initialize conversation history and user_input in session state
 if 'conversation_history' not in st.session_state:
@@ -582,10 +611,14 @@ def display_article_card(article, is_dark_mode=False):
     """, unsafe_allow_html=True)
     logger.info(f"Displayed article: {article['title']}")
 
-if generate:
+# Main logic for generating response
+if generate or st.session_state.enter_pressed:
     if user_input == "":
         st.warning("Please enter a message ⚠️")
     else:
+        # Reset the enter_pressed state
+        st.session_state.enter_pressed = False
+        
         with st_lottie_spinner(loading_animation):
             logger.info(f"User input: {user_input}")
 
