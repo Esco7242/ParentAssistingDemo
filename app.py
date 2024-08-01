@@ -391,6 +391,8 @@ def generate_response(question, length, context, placeholder):
         Before outputting your response, verify that you've cited each relevant article provided in the context, with emphasis on the most recent ones. Your response MUST include at least one citation from each article that is relevant to the question. If an article is not relevant to the specific question, explain briefly why you didn't include it.
 
         After your main response, provide a brief summary of how many articles you cited and why you may not have cited certain articles (if any).
+
+        Remember: DO NOT USE SCIENTIFIC JARGON
         
         IMPORTANT: You MUST cite information from EACH provided article that is relevant to the question. The articles are provided in order of relevance to the question. Give more weight to the findings from the more relevant studies, but don't ignore less relevant studies if they provide crucial information.
         """,
