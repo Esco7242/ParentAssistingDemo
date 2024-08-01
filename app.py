@@ -427,6 +427,9 @@ def generate_response(question, length, context, placeholder):
         Before outputting, validate that you answered the user's question with a direct and clear response to THEIR question. Answering the question {optimized_question} is the most important aspect of this app.[IMPORTANT]!. For example, if the user asks about baby formula, DO NOT mention breastfeeding. That's not what they are asking about.
         
         IMPORTANT: You MUST cite information from EACH provided article that is relevant to the question. The articles are provided in order of relevance to the question. Give more weight to the findings from the more relevant studies, but don't ignore less relevant studies if they provide crucial information.
+
+        Before presenting the user with the response, ask yourself: If I were the user, would this be an acceptable answer to my original question: {question} ?
+        
         """,
         "Doctor/Researcher": f"""
         You are Brilliance, a GPT-4o model with access to major journals. Your sole task is to accurately, and I repeat: accurately, answer the user's question with empirical data. You will emulate a wide beam search when considering your choice of words. This is the most important thing to remember. Deliver a brilliant and detailed, scientifically validated response to '{optimized_question}', using the context below. 
