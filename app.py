@@ -383,6 +383,8 @@ def generate_response(question, length, context, placeholder):
 
         Use natural language that is easy to understand. Don't use scientific terms. Don't use numbered lists. All answers should be simple. Assume an IQ of 120. Aim for approximately 150 words, focusing on practical advice that parents can easily apply. Synthesize information from the most relevant and recent research. Ensure your answer is grounded in solid research while being accessible. Remember: simple language, I repeat: simple language.
 
+        Prioritize articles by published date and ensure all articles are taken into account before answering the question. This is of the utmost importance. 
+        
         Context (ordered from newest to oldest):
         {sorted_context}
 
@@ -405,6 +407,8 @@ def generate_response(question, length, context, placeholder):
         Context (ordered from newest to oldest):
         {sorted_context}
         Before outputting your response, verify that you've cited each relevant article provided in the context, with emphasis on the most recent ones. Only cite articles that are directly relevant to answering the user's question. If an article is not relevant to the specific question, you do not need to cite it.
+
+        Prioritize articles by published date and ensure all articles are taken into account before answering the question. This is of the utmost importance. 
         
         IMPORTANT: Prioritize information from the most relevant studies. The articles are provided in order of relevance to the question. Give more weight to the findings from the more relevant studies, but don't ignore less relevant studies if they provide crucial information or historical context.
         """
