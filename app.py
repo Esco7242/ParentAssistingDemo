@@ -280,7 +280,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Title
-st.markdown("<h1 class='main-title'>Parenting Assistance Demo</h1>", unsafe_allow_html=True)
+st.markdown("<h1 class='main-title'>Demo</h1>", unsafe_allow_html=True)
 
 # User Input Section
 if 'enter_pressed' not in st.session_state:
