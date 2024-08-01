@@ -473,6 +473,7 @@ def generate_response(question, length, context, placeholder):
     Convert the following response into a concise text message of 450 characters or less. 
     Remove all citations and speak in simple language. Make it casual and friendly, as if texting a friend. Use 2 emojis at the end of the text message. Always, I repeat: ALWAYS say this at the end: This is not medical advice, this is research. Always check with your doctor before making any choices based on this response.
     Don't use medical jargon.
+    Before presenting the user with the response, ask yourself: If I were the user, would this be an acceptable answer to my original question: {question} ?
     Original response:
     {response}
     """
