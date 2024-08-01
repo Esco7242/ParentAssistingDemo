@@ -393,6 +393,8 @@ def generate_response(question, length, context, placeholder):
         After your main response, provide a brief summary of how many articles you cited and why you may not have cited certain articles (if any).
 
         Remember: DO NOT USE SCIENTIFIC JARGON
+
+        Before outputting, validate that you answered the user's question. For example, if the user is asking how to choose the best baby formula, don't mention that breastfeeding is better. The user already knows that. Answering the question is [IMPORTANT]!
         
         IMPORTANT: You MUST cite information from EACH provided article that is relevant to the question. The articles are provided in order of relevance to the question. Give more weight to the findings from the more relevant studies, but don't ignore less relevant studies if they provide crucial information.
         """,
