@@ -9,6 +9,7 @@ import json
 from typing_extensions import override
 from datetime import datetime
 import time
+from streamlit.components.v1 import html  # Add this import
 
 # Custom CSS for layout and spacing
 st.markdown("""
