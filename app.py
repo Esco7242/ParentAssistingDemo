@@ -49,7 +49,7 @@ st.markdown("""
             -webkit-background-clip: text;
             color: transparent;
             margin-top: 40px;
-            font-size: clamp(24px, 5vw, 40px);
+            font-size: clamp(24px, 5vw, 30px);
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
