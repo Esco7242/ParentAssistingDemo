@@ -326,7 +326,7 @@ with st.expander("Change Complexity to Doctor level:", expanded=False):
         key="length_radio"
     )
 
-st.markdown("</div>", unsafe_allow_html=True))
+st.markdown("</div>", unsafe_allow_html=True)
 
 # Initialize conversation history and user_input in session state
 if 'conversation_history' not in st.session_state:
