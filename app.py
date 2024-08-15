@@ -130,7 +130,7 @@ class EventHandler(AssistantEventHandler):
         if self.first_chunk:
             self.text_accumulated = delta.value
             self.first_chunk = False
-        else:xs
+        else:
             self.text_accumulated += delta.value
         if self.placeholder:
             self.placeholder.markdown(self.text_accumulated)
@@ -145,7 +145,7 @@ def create_assistant():
         instructions="""
         You are a research assistant. Accuracy is of the utmost importance
         """,
-        model="chatgpt-4o-latest"
+        model="gpt-4o-mini"
     )
     logger.info(f"Assistant created: {assistant.id}")
     return assistant
